@@ -480,7 +480,7 @@ export default {
 		 */
 		focusNext(event) {
 			if (this.focused === null) {
-				this.focusFirst()
+				this.focusFirst(event)
 				return
 			}
 
