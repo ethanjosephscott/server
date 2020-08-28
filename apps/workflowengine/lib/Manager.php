@@ -150,7 +150,7 @@ class Manager implements IManager {
 		$query->selectDistinct('class')
 			->addSelect('entity', 'events')
 			->from('flow_operations')
-			->where($query->expr()->neq($query->expr()->castColumn('events', IQueryBuilder::PARAM_STR), $query->createNamedParameter('[]')));
+			->where($query->expr()->neq($query->expr()->castColumn('events', IQueryBuilder::PARAM_LOB), $query->createNamedParameter('[]', IQueryBuilder::PARAM_LOB)));
 
 		$result = $query->execute();
 		$operations = [];
